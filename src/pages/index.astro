@@ -21,7 +21,7 @@ const { entries, collection } = resp.data;
       <ul>
         {
           entries.map((post: any) => {
-            const formattedDate = new Date(post.rawPubDate).toLocaleDateString(
+            const formattedDate = new Date(dayjs.unix(post.timestamp).toISOString()).toLocaleDateString(
               "en-us",
               {
                 year: "numeric",
